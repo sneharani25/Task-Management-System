@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DUMMY_USERS } from './dummy-users';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'Task_Management';
+  users = DUMMY_USERS;
 }
