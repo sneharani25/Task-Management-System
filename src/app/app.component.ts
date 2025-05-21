@@ -9,4 +9,9 @@ import { DUMMY_USERS } from './dummy-users';
 })
 export class AppComponent {
   users = DUMMY_USERS;
+
+  onSelect(id : string){
+    console.log("this.id is", id);
+    
+  }
 }
