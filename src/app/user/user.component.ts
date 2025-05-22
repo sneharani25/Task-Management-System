@@ -7,15 +7,21 @@ import { Component, computed, EventEmitter, Input, input, Output, output } from 
   styleUrl: './user.component.css'
 })
 export class UserComponent {
-  @Input() avatar! : string ;
-  @Input() name! : string;
-  @Input() id! : string ; 
+  // @Input() avatar! : string ;
+  // @Input() name! : string;
+  // @Input() id! : string ; 
+
+  @Input() user !: {
+    avatar : string ;
+    name : string;
+    id : string ;
+  }
   // @Output() select = new EventEmitter();
   select = output<string>();
   @Output() userClicked = new EventEmitter<String>();
 
   get imagePath(){
-    return "../../assets/users/"+this.avatar;
+    return "../../assets/users/"+this.user.avatar;
   }
 
   /* avatar = input<string>();
@@ -26,9 +32,9 @@ export class UserComponent {
   }) */
 
   onSelectUser() {
-    this.select.emit(this.id);
+    this.select.emit(this.user.id);
   }
   onClickUserName(){
-    this.userClicked.emit(this.name);
+    this.userClicked.emit(this.user.name);
   }
 }
