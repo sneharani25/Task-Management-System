@@ -1,4 +1,17 @@
-import { Component, computed, EventEmitter, Input, input, Output, output } from '@angular/core';
+import { Component, computed, EventEmitter, Input, input, Output, output, Type } from '@angular/core';
+import { User } from '../userType';
+
+/* type user = {
+    avatar : string;
+    name : string;
+    id : string ;
+} */
+
+interface User{
+  avatar : string;
+  name : string;
+  id : string ;
+}
 
 @Component({
   selector: 'app-user',
@@ -7,15 +20,16 @@ import { Component, computed, EventEmitter, Input, input, Output, output } from 
   styleUrl: './user.component.css'
 })
 export class UserComponent {
+  @Input() user!: User
   // @Input() avatar! : string ;
   // @Input() name! : string;
   // @Input() id! : string ; 
 
-  @Input() user !: {
-    avatar : string ;
-    name : string;
-    id : string ;
-  }
+  // @Input() user !: {
+  //   avatar : string ;
+  //   name : string;
+  //   id : string ;
+  // }
   // @Output() select = new EventEmitter();
   select = output<string>();
   @Output() userClicked = new EventEmitter<String>();
