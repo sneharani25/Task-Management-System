@@ -1,7 +1,9 @@
 <div>
-    <button (click)="onSelectUser()">
+    <button (click)="onSelectUser() " (click)="onClickUserName()">
       <img [src]="imagePath" [alt]="name" />
       <span>{{ name }}</span>
     </button>
-  </div>
+</div>
+
+<!-- <app-tasks [name]="name"></app-tasks> -->
   

@@ -5,7 +5,9 @@
   <!-- <img src="../../public/assets/angular-logo.png" alt="rds"> -->
   <ul id="users">
     <app-user [avatar]="users[0].avatar" [name]="users[0].name" [id]="users[0].id" (select)="onSelect($event)"></app-user>
-    <app-user [avatar]="users[1].avatar" [name]="users[1].name" [id]="users[1].id"></app-user>
-    <app-user [avatar]="users[2].avatar" [name]="users[2].name" [id]="users[1].id"></app-user>
+    <app-user [avatar]="users[1].avatar" [name]="users[1].name" [id]="users[1].id" (select)="onSelect($event)"></app-user>
+    <app-user [avatar]="users[2].avatar" [name]="users[2].name" [id]="users[2].id" (select)="onSelect($event)"></app-user>
   </ul>
+
+  <app-tasks [name]="userName?.name"></app-tasks>
 </main>
